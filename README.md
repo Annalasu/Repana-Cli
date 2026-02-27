@@ -55,11 +55,12 @@ flowchart LR
 
 ## 项目目录结构
 
-```
-Repana-Cli/
+```text
+.
 ├── index.js              # 主入口文件，包含 CLI 逻辑与核心工具函数
 ├── package.json          # 项目配置与依赖声明
 ├── package-lock.json     # 依赖版本锁定文件
+├── prompt-example.md     # 自定义提示词的编写示例（可作为模板）
 └── README.md             # 项目说明文档
 ```
 
@@ -79,6 +80,7 @@ Remove-Item ~/.repana.json
 rm ~/.repana.json
 
 ```
+
 
 
 
