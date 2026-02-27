@@ -32,6 +32,14 @@ repana config
 repana
 ```
 
+## 命令列表
+
+全局安装后，支持以下 CLI 命令：
+
+- `repana`：启动主要分析流程（交互式引导选择代码库与分析方向）
+- `repana config`：配置大模型参数 (API Base URL、Model、API Key)
+- `repana help`：显示命令帮助信息
+
 ## 主要模块与使用说明
 
 ### 入口与交互流程
@@ -80,6 +88,7 @@ Remove-Item ~/.repana.json
 rm ~/.repana.json
 
 ```
+
 
 
 
