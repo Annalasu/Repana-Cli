@@ -1,4 +1,4 @@
-# CodeDocs CLI Tool (repana)
+# Repana-Cli
 
 这是一个基于 AI 的代码库分析与 Markdown 文档生成工具，通过命令行交互即可对任意代码项目进行多维度分析并输出标准化文档。
 
@@ -82,3 +82,4 @@ Remove-Item ~/.repana.json
 rm ~/.repana.json
 
 ```
+
