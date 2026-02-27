@@ -61,9 +61,7 @@ Repana-Cli/
 ├── index.js              # 主入口文件，包含 CLI 逻辑与核心工具函数
 ├── package.json          # 项目配置与依赖声明
 ├── package-lock.json     # 依赖版本锁定文件
-├── README.md             # 项目说明文档
-└── Analysis/
-    └── doc.md            # 默认生成的分析文档输出位置
+└── README.md             # 项目说明文档
 ```
 
 ## 卸载指引
@@ -71,7 +69,7 @@ Repana-Cli/
 如果你不再需要使用该工具，可以通过以下步骤干净地卸载：
 
 ```bash
-# 解除 npm 全局命令的软链接 (需要指定 package.json 中的 name)
+# 解除 npm 全局命令的软链接
 npm uninstall -g repana
 
 # (可选) 删除用户目录下的持久化配置文件
@@ -82,4 +80,5 @@ Remove-Item ~/.repana.json
 rm ~/.repana.json
 
 ```
+
 
