@@ -233,7 +233,7 @@ function parseJsonObject(text) {
 function createFileCatalog(index, maxLines = 320) {
     return index.files
         .slice(0, maxLines)
-        .map((x) => `- ${x.rel}`)
+        .map((x) => `- ${x.rel.replace(/\\/g, '/')}`)
         .join("\n");
 }
 
@@ -789,9 +789,9 @@ async function startWorkflow() {
             knowledgeSnapshot
         });
 
-        const selectedPaths = (plan?.selectedFiles || []).map(x => String(x?.path || "").trim()).filter(Boolean);
-        const validSet = new Set(repoIndex.files.map((x) => x.rel));
-        const validPaths = Array.from(new Set(selectedPaths)).filter((x) => validSet.has(x));
+        const selectedPaths = (plan?.selectedFiles || []).map(x => String(x?.path || "").trim().replace(/\\/g, '/')).filter(Boolean);
+        const validMap = new Map(repoIndex.files.map((x) => [x.rel.replace(/\\/g, '/'), x.rel]));
+        const validPaths = Array.from(new Set(selectedPaths)).filter((x) => validMap.has(x)).map(x => validMap.get(x));
 
         if (!validPaths.length) {
             throw new Error("AI 规划结果无有效文件（路径不在可选清单中）。");
